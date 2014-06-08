@@ -1,0 +1,10 @@
+<div class="gallery col-sm-12">
+	<div class="img-wrap clearfix">
+		<img ng-src="{{'http://dhg7upb7j7jqa.cloudfront.net/shaping_up_with_angular_js/assets/demo/' + product.images[gallery.current] }}">
+	</div>
+	<ul class="img-thumbnails clearfix">
+		<li class="small-image pull-left thumbnail" ng-repeat="image in product.images" ng-click="gallery.setCurrent($index)">
+			<img ng-src="{{'http://dhg7upb7j7jqa.cloudfront.net/shaping_up_with_angular_js/assets/demo/' + image}}">
+		</li>
+	</ul>
+</div>

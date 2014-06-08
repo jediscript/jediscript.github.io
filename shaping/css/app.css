@@ -1,0 +1,42 @@
+body{
+	margin-top: 20px !important;
+}
+.img-wrap{
+	background: #f8f8f8;
+	height: 200px;
+	margin: 0 auto 20px;
+	padding: 10px;
+	width: 200px;
+}
+
+.img-thumbnails{
+	margin: 0 auto 10px;
+	width: 280px;
+}
+
+.img-thumbnails .thumbnail{
+	background: #f8f8f8;
+	border: 0;
+	margin-right: 25px;
+	min-height: 50px;
+}
+
+li.small-image{
+	width: 50px;
+}
+
+li.small-image img{
+	width: 100%;
+}
+
+.container{
+	width: 600px !important;
+}
+
+.ng-invalid.ng-dirty{
+	border-color: red;
+}
+
+.ng-valid.ng-dirty{
+	border-color: green;
+}

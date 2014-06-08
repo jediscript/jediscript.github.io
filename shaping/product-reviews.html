@@ -1,0 +1,52 @@
+	<ul class="list-unstyled">
+		<h4>Reviews</h4>
+		<li ng-repeat="review in product.reviews">
+			<blockquote>
+				<strong>{{review.stars + " Stars"}}</strong>
+				{{review.body}}
+				<cite class="clearfix">{{review.author}} on {{review.createdOn | date}}</cite>
+			</blockquote>
+		</li>
+	</ul>
+	<form name="reviewForm" class="form-horizontal" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+		<div class="form-group">
+			<ul class="list-unstyled">
+				<li>
+					<blockquote>
+						<strong>{{reviewCtrl.review.stars + " Stars"}}</strong>
+						{{reviewCtrl.review.body}}
+						<cite>{{"- " + reviewCtrl.review.author}}</cite>
+					</blockquote>
+				</li>
+			</ul>
+		</div>
+		<div class="form-group">
+			<label for="stars" class="col-sm-2 control-label">Rating:</label>
+			<div class="col-sm-10">
+				<select ng-model="reviewCtrl.review.stars" class="form-control" name="stars" id="stars" required>
+					<option value="1">1 star</option>
+					<option value="2">2 stars</option>
+					<option value="3">3 stars</option>
+					<option value="4">4 stars</option>
+					<option value="5">5 stars</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="message" class="col-sm-2 control-label">Message:</label>
+			<div class="col-sm-10">
+				<textarea ng-model="reviewCtrl.review.body" class="form-control" name="message" id="message" required></textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="author" class="col-sm-2 control-label">By:</label>
+			<div class="col-sm-10">
+				<input ng-model="reviewCtrl.review.author" type="email" class="form-control" name="author" id="author" required/>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<input type="submit" value="Submit" class="btn btn-default"/>
+			</div>
+		</div>
+	</form>
